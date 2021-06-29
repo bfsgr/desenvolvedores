@@ -1,0 +1,8 @@
+{
+  "name": "typescript-app-api",
+  "version": "1.0.0",
+  "main": "src/api.ts",
+  "author": "bfsgr <bfsgr.code@protonmail.com>",
+  "license": "BSD-3-Clause",
+  "private": false
+}

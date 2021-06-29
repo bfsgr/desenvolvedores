@@ -1,0 +1,10 @@
+{
+  "name": "typescript-dev-api",
+  "version": "1.0.0",
+  "description": "Exemplo de API REST com CRUD de desenvolvedores",
+  "main": "app.ts",
+  "repository": "https://github.com/bfsgr/typescript-app.git",
+  "author": "bfsgr <bfsgr.code@protonmail.com>",
+  "license": "BSD-3-Clause",
+  "private": false
+}

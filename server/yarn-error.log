@@ -1,0 +1,36 @@
+Arguments: 
+  /usr/bin/node /usr/bin/yarn init
+
+PATH: 
+  /home/bfsgr/.local/bin:/home/bfsgr/.rvm/gems/ruby-3.0.1/bin:/home/bfsgr/.rvm/gems/ruby-3.0.1@global/bin:/home/bfsgr/.rvm/rubies/ruby-3.0.1/bin:/home/bfsgr/.cargo/bin:/home/bfsgr/.local/bin:/usr/local/bin:/usr/local/sbin:/usr/bin:/usr/sbin:/usr/lib/dart/bin:/home/bfsgr/.cargo/bin:/home/bfsgr/.rvm/bin:/home/bfsgr/.rvm/bin:/home/bfsgr/bin:/home/bfsgr/.dotnet/tools:/home/bfsgr/bin:/home/bfsgr/.rvm/bin:/home/bfsgr/.rvm/bin
+
+Yarn version: 
+  1.22.10
+
+Node version: 
+  14.17.0
+
+Platform: 
+  linux x64
+
+Trace: 
+  Error: canceled
+      at Interface.<anonymous> (/usr/lib/node_modules/yarn/node_modules/read/lib/read.js:66:13)
+      at Interface.emit (events.js:376:20)
+      at Interface._ttyWrite (readline.js:880:16)
+      at ReadStream.onkeypress (readline.js:213:10)
+      at ReadStream.emit (events.js:376:20)
+      at emitKeys (internal/readline/utils.js:345:14)
+      at emitKeys.next (<anonymous>)
+      at ReadStream.onData (readline.js:1149:36)
+      at ReadStream.emit (events.js:376:20)
+      at addChunk (internal/streams/readable.js:309:12)
+
+npm manifest: 
+  No manifest
+
+yarn manifest: 
+  No manifest
+
+Lockfile: 
+  No lockfile
