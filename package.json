@@ -1,5 +1,5 @@
 {
-  "name": "typescript-dev-api",
+  "name": "typescript-app",
   "version": "1.0.0",
   "description": "Exemplo de API REST com CRUD de desenvolvedores",
   "main": "app.ts",
