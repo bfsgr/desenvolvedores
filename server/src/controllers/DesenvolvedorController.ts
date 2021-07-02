@@ -3,6 +3,7 @@ import { CriarDesenvolvedorService } from "../services/CriarDesenvolvedorService
 import { ListarDesenvolvedoresService } from "../services/ListarDesenvolvedoresService";
 import { parseQueryParams } from "../helpers/ParseQueryParams";
 import { ErrorNotFound } from "../helpers/ErrorNotFound";
+import { MostrarDesenvolvedorService } from "../services/MostrarDesenvolvedorService";
 
 export class DesenvolvedorController {
   async create(request: Request, response: Response) {
@@ -43,5 +44,19 @@ export class DesenvolvedorController {
     }
 
     return response.json(devs);
+  }
+
+  async show(request: Request, response: Response) {
+    const id = Number.parseInt(request.params.id);
+
+    if (isNaN(id)) {
+      throw new Error("ID deve ser um número válido");
+    }
+
+    const mostrarDesenvolvedorService = new MostrarDesenvolvedorService();
+
+    const dev = await mostrarDesenvolvedorService.execute(id);
+
+    return response.json(dev);
   }
 }
