@@ -1,6 +1,6 @@
 export class ErrorNotFound extends Error {
-  constructor(details: Record<string, string[]>) {
-    super();
+  constructor(message?: string) {
+    super(message);
 
     Object.setPrototypeOf(this, ErrorNotFound.prototype);
   }

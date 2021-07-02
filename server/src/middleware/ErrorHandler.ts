@@ -21,6 +21,12 @@ export function errorHandler(
     });
   }
 
+  if (err instanceof Error) {
+    return response.status(StatusCodes.BAD_REQUEST).json({
+      errors: err.message,
+    });
+  }
+
   return response.status(StatusCodes.INTERNAL_SERVER_ERROR).json({
     status: "error",
     message: "Internal Server Error",
