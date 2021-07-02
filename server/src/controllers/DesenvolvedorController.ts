@@ -6,6 +6,7 @@ import { ErrorNotFound } from "../helpers/ErrorNotFound";
 import { MostrarDesenvolvedorService } from "../services/MostrarDesenvolvedorService";
 import { RemoverDesenvolvedorService } from "../services/RemoverDesenvolvedorService";
 import { StatusCodes } from "http-status-codes";
+import { AtualizarDesenvolvedorService } from "../services/AtualizarDesenvolvedorService";
 
 export class DesenvolvedorController {
   async create(request: Request, response: Response) {
@@ -58,6 +59,26 @@ export class DesenvolvedorController {
     const mostrarDesenvolvedorService = new MostrarDesenvolvedorService();
 
     const dev = await mostrarDesenvolvedorService.execute(id);
+
+    return response.json(dev);
+  }
+
+  async update(request: Request, response: Response) {
+    const id = Number.parseInt(request.params.id);
+    const { nome, hobby, sexo, data_nascimento } = request.body;
+
+    if (isNaN(id)) {
+      throw new Error("ID deve ser um número válido");
+    }
+
+    const atualizarDesenvolvedorService = new AtualizarDesenvolvedorService();
+
+    const dev = await atualizarDesenvolvedorService.execute(id, {
+      nome,
+      hobby,
+      sexo,
+      data_nascimento,
+    });
 
     return response.json(dev);
   }

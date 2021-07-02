@@ -1,4 +1,10 @@
-import { AfterLoad, Column, Entity, PrimaryGeneratedColumn } from "typeorm";
+import {
+  AfterLoad,
+  AfterUpdate,
+  Column,
+  Entity,
+  PrimaryGeneratedColumn,
+} from "typeorm";
 import {
   IsDate,
   IsDefined,
@@ -47,6 +53,7 @@ export class Desenvolvedor {
   data_nascimento: Date;
 
   @AfterLoad()
+  @AfterUpdate()
   calcularIdade() {
     const hoje = dayjs(Date.now());
     const nasc = dayjs(this.data_nascimento);

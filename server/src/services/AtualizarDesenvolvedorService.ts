@@ -1,19 +1,26 @@
+import { IDesenvolvedorRequest } from "../interfaces/IDesenvolvedorRequest";
 import { getCustomRepository } from "typeorm";
 import { DesenvolvedorRepository } from "../repositories/DesenvolvedorRepository";
 import { validate } from "class-validator";
 import { CriarRespostaErroService } from "./CriarRespostaErroService";
-import { IDesenvolvedorRequest } from "../interfaces/IDesenvolvedorRequest";
 
-export class CriarDesenvolvedorService {
-  async execute({ nome, hobby, sexo, data_nascimento }: IDesenvolvedorRequest) {
+export class AtualizarDesenvolvedorService {
+  async execute(
+    id: number,
+    { nome, sexo, hobby, data_nascimento }: IDesenvolvedorRequest
+  ) {
     const devRepository = getCustomRepository(DesenvolvedorRepository);
 
-    const dev = devRepository.create({
-      nome: nome,
-      hobby: hobby,
-      sexo: sexo,
-      data_nascimento: new Date(data_nascimento),
-    });
+    const dev = await devRepository.findOne(id);
+
+    if (!dev) {
+      throw new Error("Desenvolvedor não encontrado");
+    }
+
+    dev.nome = nome;
+    dev.sexo = sexo;
+    dev.hobby = hobby;
+    dev.data_nascimento = new Date(data_nascimento);
 
     const errors = await validate(dev);
 
@@ -22,8 +29,6 @@ export class CriarDesenvolvedorService {
       throw criarRespostaErroService.execute(errors);
     }
 
-    await devRepository.save(dev);
-
-    return dev;
+    return await devRepository.save(dev);
   }
 }
