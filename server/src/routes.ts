@@ -7,6 +7,7 @@ const devController = new DesenvolvedorController();
 
 router.get("/developers", devController.index);
 router.get("/developers/:id", devController.show);
+router.delete("/developers/:id", devController.destroy);
 router.post("/developers", devController.create);
 
 export { router };

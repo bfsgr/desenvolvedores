@@ -4,6 +4,8 @@ import { ListarDesenvolvedoresService } from "../services/ListarDesenvolvedoresS
 import { parseQueryParams } from "../helpers/ParseQueryParams";
 import { ErrorNotFound } from "../helpers/ErrorNotFound";
 import { MostrarDesenvolvedorService } from "../services/MostrarDesenvolvedorService";
+import { RemoverDesenvolvedorService } from "../services/RemoverDesenvolvedorService";
+import { StatusCodes } from "http-status-codes";
 
 export class DesenvolvedorController {
   async create(request: Request, response: Response) {
@@ -58,5 +60,19 @@ export class DesenvolvedorController {
     const dev = await mostrarDesenvolvedorService.execute(id);
 
     return response.json(dev);
+  }
+
+  async destroy(request: Request, response: Response) {
+    const id = Number.parseInt(request.params.id);
+
+    if (isNaN(id)) {
+      throw new Error("ID deve ser um número válido");
+    }
+
+    const removerDesenvolvedorService = new RemoverDesenvolvedorService();
+
+    await removerDesenvolvedorService.execute(id);
+
+    return response.status(StatusCodes.NO_CONTENT).json();
   }
 }
