@@ -14,7 +14,7 @@ export class DesenvolvedorRepository extends Repository<Desenvolvedor> {
 
     if (page && limit) {
       const offset = (page - 1) * limit;
-      query = query.offset(offset).take(limit);
+      query = query.skip(offset).take(limit);
     }
 
     return await query.getManyAndCount();
