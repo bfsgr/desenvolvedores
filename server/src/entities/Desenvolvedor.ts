@@ -37,7 +37,7 @@ export class Desenvolvedor {
 
   protected idade: number;
 
-  @Column({ type: "enum", enum: Sexo })
+  @Column({ type: "varchar", length: 1, enum: Sexo })
   @IsEnum(Sexo, { message: "$property deve ser 'M' ou 'F'" })
   @IsDefined({ message: isDefinedMessage })
   sexo: Sexo;
