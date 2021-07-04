@@ -1,16 +1,25 @@
 import "reflect-metadata";
 import "express-async-errors";
 import "./database";
-import express from "express";
+import express, { Express } from "express";
 import { errorHandler } from "./middleware/ErrorHandler";
 import { router } from "./routes";
 
-const app = express();
+export class Server {
+  app: Express;
 
-app.use(express.json());
+  constructor() {
+    this.app = express();
+    this.app.use(express.json());
+    this.app.use(router);
+    this.app.use(errorHandler);
+  }
 
-app.use(router);
+  run() {
+    this.app.listen(3000, () => console.log("API on"));
+  }
+}
 
-app.use(errorHandler);
+const server = new Server();
 
-app.listen(3000, () => console.log("API on"));
+server.run();
