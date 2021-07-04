@@ -1,11 +1,11 @@
-import { ValidatorErrorResponse } from "../helpers/ValidatorErrorResponse";
+import { ValidatorErrorResponse } from "./ValidatorErrorResponse";
 
 interface IValidationError {
   property: string;
   constraints?: Record<string, string>;
 }
 
-export class CriarRespostaErroService {
+export class CriarRespostaErro {
   /** Este serviço cria um objeto de erro legível para entregar aos consumidores da API.
    *  Ele recebe um array de erros em que cada elemento implementa IValidationError
    *  E retorna uma instância de ValidationErrorResponse

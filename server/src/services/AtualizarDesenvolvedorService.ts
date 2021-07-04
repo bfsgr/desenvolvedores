@@ -2,7 +2,7 @@ import { IDesenvolvedorRequest } from "../interfaces/IDesenvolvedorRequest";
 import { getCustomRepository } from "typeorm";
 import { DesenvolvedorRepository } from "../repositories/DesenvolvedorRepository";
 import { validate } from "class-validator";
-import { CriarRespostaErroService } from "./CriarRespostaErroService";
+import { CriarRespostaErro } from "../helpers/CriarRespostaErro";
 
 export class AtualizarDesenvolvedorService {
   async execute(
@@ -25,7 +25,7 @@ export class AtualizarDesenvolvedorService {
     const errors = await validate(dev);
 
     if (errors.length > 0) {
-      const criarRespostaErroService = new CriarRespostaErroService();
+      const criarRespostaErroService = new CriarRespostaErro();
       throw criarRespostaErroService.execute(errors);
     }
 
