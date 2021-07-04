@@ -1,5 +1,5 @@
 import { Connection, getCustomRepository } from "typeorm";
-import { useInMemoryDB } from "../infra/useInMemoryDB";
+import { useInMemoryDB } from "../infra/database/useInMemoryDB";
 import { CriarDesenvolvedorService } from "../../src/services/CriarDesenvolvedorService";
 import { factory } from "typeorm-seeding";
 import "../infra/factories/DesenvolvedorFactory";

@@ -1,5 +1,5 @@
 import { createConnection } from "typeorm";
-import { Desenvolvedor } from "../../src/entities/Desenvolvedor";
+import { Desenvolvedor } from "../../../src/entities/Desenvolvedor";
 
 export async function useInMemoryDB() {
   return await createConnection({

@@ -1,5 +1,5 @@
 import { Connection } from "typeorm";
-import { useInMemoryDB } from "../infra/useInMemoryDB";
+import { useInMemoryDB } from "../infra/database/useInMemoryDB";
 import { factory, tearDownDatabase, useSeeding } from "typeorm-seeding";
 import "../infra/factories/DesenvolvedorFactory";
 import { Desenvolvedor } from "../../src/entities/Desenvolvedor";

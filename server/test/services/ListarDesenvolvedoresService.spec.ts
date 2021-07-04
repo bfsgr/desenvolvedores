@@ -1,5 +1,5 @@
 import { Connection, getCustomRepository } from "typeorm";
-import { useInMemoryDB } from "../infra/useInMemoryDB";
+import { useInMemoryDB } from "../infra/database/useInMemoryDB";
 import {
   factory,
   runSeeder,

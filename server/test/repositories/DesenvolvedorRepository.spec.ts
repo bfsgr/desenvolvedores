@@ -1,6 +1,6 @@
 import { Connection, getCustomRepository } from "typeorm";
 import { DesenvolvedorRepository } from "../../src/repositories/DesenvolvedorRepository";
-import { useInMemoryDB } from "../infra/useInMemoryDB";
+import { useInMemoryDB } from "../infra/database/useInMemoryDB";
 import {
   factory,
   runSeeder,
