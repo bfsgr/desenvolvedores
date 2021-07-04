@@ -15,11 +15,7 @@ export class Server {
     this.app.use(errorHandler);
   }
 
-  run() {
-    this.app.listen(3000, () => console.log("API on"));
+  listen(port: number = 3000, callback?: () => void) {
+    this.app.listen(port, callback);
   }
 }
-
-const server = new Server();
-
-server.run();
