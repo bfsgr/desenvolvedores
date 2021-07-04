@@ -4,8 +4,9 @@ import "./database";
 import express, { Express } from "express";
 import { errorHandler } from "./middleware/ErrorHandler";
 import { router } from "./routes";
+import { Server } from "http";
 
-export class Server {
+export class API {
   app: Express;
 
   constructor() {
@@ -15,7 +16,7 @@ export class Server {
     this.app.use(errorHandler);
   }
 
-  listen(port: number = 3000, callback?: () => void) {
-    this.app.listen(port, callback);
+  listen(port: number = 3000, callback?: () => void): Server {
+    return this.app.listen(port, callback);
   }
 }
