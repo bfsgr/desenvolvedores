@@ -1,9 +1,5 @@
 import { ValidatorErrorResponse } from "./ValidatorErrorResponse";
-
-interface IValidationError {
-  property: string;
-  constraints?: Record<string, string>;
-}
+import { IValidationError } from "../interfaces/IValidationError";
 
 export class CriarRespostaErro {
   /** Este serviço cria um objeto de erro legível para entregar aos consumidores da API.
