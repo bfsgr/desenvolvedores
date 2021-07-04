@@ -21,7 +21,7 @@ export class DesenvolvedorController {
       data_nascimento,
     });
 
-    return response.json(dev);
+    return response.status(StatusCodes.CREATED).json(dev);
   }
 
   async index(request: Request, response: Response) {
