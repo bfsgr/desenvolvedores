@@ -43,7 +43,9 @@ export class Desenvolvedor {
   sexo: Sexo;
 
   @IsDefined({ message: isDefinedMessage })
-  @Column()
+  @MinLength(3, { message: lengthLessThanMessage })
+  @MaxLength(100, { message: lengthGreaterThanMessage })
+  @Column({ type: "varchar", length: 100 })
   hobby: string;
 
   @IsDefined({ message: isDefinedMessage })
