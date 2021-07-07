@@ -1,0 +1,24 @@
+.dev-card {
+  &:hover {
+    box-shadow: 4px 4px 4px -1px rgba(0, 0, 0, 0.25);
+    transition: box-shadow 0.2s;
+
+
+    .actions {
+      visibility: visible;
+    }
+
+    .action-button {
+      cursor: pointer;
+    }
+
+    .edit:hover {
+      color: var(--chakra-colors-primary-500);
+      transition: color 0.2s;
+    }
+    .remove:hover {
+      color: var(--chakra-colors-red-500);
+      transition: color 0.2s;
+    }
+  }
+}
