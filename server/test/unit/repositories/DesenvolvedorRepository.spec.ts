@@ -1,6 +1,6 @@
 import { Connection, getCustomRepository } from "typeorm";
-import { DesenvolvedorRepository } from "../../src/repositories/DesenvolvedorRepository";
-import { useInMemoryDB } from "../infra/database/useInMemoryDB";
+import { DesenvolvedorRepository } from "../../../src/repositories/DesenvolvedorRepository";
+import { useInMemoryDB } from "../../infra/database/useInMemoryDB";
 import {
   factory,
   runSeeder,
@@ -11,8 +11,8 @@ import { assert } from "chai";
 import {
   count,
   CreateDesenvolvedoresSeeder,
-} from "../infra/seeds/CreateDesenvolvedoresSeeder";
-import { Desenvolvedor } from "../../src/entities/Desenvolvedor";
+} from "../../infra/seeds/CreateDesenvolvedoresSeeder";
+import { Desenvolvedor } from "../../../src/entities/Desenvolvedor";
 
 describe("Listar desenvolvedores", () => {
   let connection: Connection;

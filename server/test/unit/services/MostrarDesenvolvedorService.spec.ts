@@ -1,11 +1,11 @@
 import { Connection } from "typeorm";
-import { useInMemoryDB } from "../infra/database/useInMemoryDB";
+import { useInMemoryDB } from "../../infra/database/useInMemoryDB";
 import { factory, tearDownDatabase, useSeeding } from "typeorm-seeding";
-import "../infra/factories/DesenvolvedorFactory";
-import { Desenvolvedor } from "../../src/entities/Desenvolvedor";
+import "../../infra/factories/DesenvolvedorFactory";
+import { Desenvolvedor } from "../../../src/entities/Desenvolvedor";
 import { assert } from "chai";
-import { MostrarDesenvolvedorService } from "../../src/services/MostrarDesenvolvedorService";
-import { ErrorNotFound } from "../../src/helpers/ErrorNotFound";
+import { MostrarDesenvolvedorService } from "../../../src/services/MostrarDesenvolvedorService";
+import { ErrorNotFound } from "../../../src/helpers/ErrorNotFound";
 
 describe("Mostrar desenvolvedor service", () => {
   let connection: Connection;

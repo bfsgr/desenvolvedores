@@ -1,12 +1,12 @@
 import { Connection, getCustomRepository } from "typeorm";
-import { useInMemoryDB } from "../infra/database/useInMemoryDB";
-import { CriarDesenvolvedorService } from "../../src/services/CriarDesenvolvedorService";
+import { useInMemoryDB } from "../../infra/database/useInMemoryDB";
+import { CriarDesenvolvedorService } from "../../../src/services/CriarDesenvolvedorService";
 import { factory } from "typeorm-seeding";
-import "../infra/factories/DesenvolvedorFactory";
-import { Desenvolvedor } from "../../src/entities/Desenvolvedor";
-import { DesenvolvedorRepository } from "../../src/repositories/DesenvolvedorRepository";
+import "../../infra/factories/DesenvolvedorFactory";
+import { Desenvolvedor } from "../../../src/entities/Desenvolvedor";
+import { DesenvolvedorRepository } from "../../../src/repositories/DesenvolvedorRepository";
 import { assert } from "chai";
-import { ValidatorErrorResponse } from "../../src/helpers/ValidatorErrorResponse";
+import { ValidatorErrorResponse } from "../../../src/helpers/ValidatorErrorResponse";
 
 describe("Criar desenvolvedor service", () => {
   let connection: Connection;

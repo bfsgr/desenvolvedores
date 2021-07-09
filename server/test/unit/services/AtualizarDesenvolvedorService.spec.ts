@@ -1,11 +1,11 @@
 import { Connection, getCustomRepository } from "typeorm";
-import { useInMemoryDB } from "../infra/database/useInMemoryDB";
+import { useInMemoryDB } from "../../infra/database/useInMemoryDB";
 import { factory, tearDownDatabase, useSeeding } from "typeorm-seeding";
-import "../infra/factories/DesenvolvedorFactory";
-import { Desenvolvedor } from "../../src/entities/Desenvolvedor";
-import { ValidatorErrorResponse } from "../../src/helpers/ValidatorErrorResponse";
-import { AtualizarDesenvolvedorService } from "../../src/services/AtualizarDesenvolvedorService";
-import { DesenvolvedorRepository } from "../../src/repositories/DesenvolvedorRepository";
+import "../../infra/factories/DesenvolvedorFactory";
+import { Desenvolvedor } from "../../../src/entities/Desenvolvedor";
+import { ValidatorErrorResponse } from "../../../src/helpers/ValidatorErrorResponse";
+import { AtualizarDesenvolvedorService } from "../../../src/services/AtualizarDesenvolvedorService";
+import { DesenvolvedorRepository } from "../../../src/repositories/DesenvolvedorRepository";
 import { assert } from "chai";
 
 describe("Atualizar desenvolvedor service", () => {

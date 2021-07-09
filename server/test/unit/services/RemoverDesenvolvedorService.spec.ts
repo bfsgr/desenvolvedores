@@ -1,11 +1,11 @@
 import { Connection, getCustomRepository } from "typeorm";
-import { useInMemoryDB } from "../infra/database/useInMemoryDB";
+import { useInMemoryDB } from "../../infra/database/useInMemoryDB";
 import { factory, tearDownDatabase, useSeeding } from "typeorm-seeding";
-import "../infra/factories/DesenvolvedorFactory";
-import { Desenvolvedor } from "../../src/entities/Desenvolvedor";
-import { DesenvolvedorRepository } from "../../src/repositories/DesenvolvedorRepository";
+import "../../infra/factories/DesenvolvedorFactory";
+import { Desenvolvedor } from "../../../src/entities/Desenvolvedor";
+import { DesenvolvedorRepository } from "../../../src/repositories/DesenvolvedorRepository";
 import { assert } from "chai";
-import { RemoverDesenvolvedorService } from "../../src/services/RemoverDesenvolvedorService";
+import { RemoverDesenvolvedorService } from "../../../src/services/RemoverDesenvolvedorService";
 
 describe("Remover desenvolvedor service", () => {
   let connection: Connection;
