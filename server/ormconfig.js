@@ -7,8 +7,8 @@ module.exports = {
   database: process.env.POSTGRES_DBNAME,
   synchronize: false,
   logging: true,
-  entities: ["src/entities/*.ts"],
-  migrations: ["src/database/migrations/*.ts"],
+  entities: ["src/entities/*.ts", "src/entities/*.js"],
+  migrations: ["src/database/migrations/*.ts", "src/database/migrations/*.js"],
   cli: {
     entitiesDir: "src/entities",
     migrationsDir: "src/database/migrations",
