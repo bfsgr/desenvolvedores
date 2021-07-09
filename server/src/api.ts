@@ -23,6 +23,7 @@ export class API {
       })
     );
     this.app.use(express.json());
+    this.app.use(express.static("public"));
     this.app.use(router);
     this.app.use(errorHandler);
   }
