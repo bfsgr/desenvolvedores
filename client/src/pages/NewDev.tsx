@@ -105,15 +105,7 @@ export function NewDev() {
     }
   }
 
-  useEffect(() => {
-    loadDev();
-  }, [id, history]);
-
-  useEffect(() => {
-    parseResponde();
-  }, [response]);
-
-  useEffect(() => {
+  function validateInputs() {
     let error = false;
     if (nome.value.trim().length < 3 || nome.value.trim().length > 80) {
       setNome({ value: nome.value, touched: nome.touched, invalid: true });
@@ -151,6 +143,18 @@ export function NewDev() {
       setSexo({ value: sexo.value, touched: sexo.touched, invalid: false });
     }
     setHasError(error);
+  }
+
+  useEffect(() => {
+    loadDev();
+  }, [id, history]);
+
+  useEffect(() => {
+    parseResponde();
+  }, [response]);
+
+  useEffect(() => {
+    validateInputs();
   }, [
     nome.value,
     hobby.value,
