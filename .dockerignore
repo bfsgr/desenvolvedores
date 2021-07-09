@@ -1,0 +1,8 @@
+.idea/
+.gitignore
+**/coverage/**
+**/build/**
+**/dist/**
+**/*.lock
+**/.env
+**/node_modules/**
