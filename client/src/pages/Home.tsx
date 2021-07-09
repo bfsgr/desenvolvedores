@@ -28,6 +28,7 @@ import { useHistory } from "react-router-dom";
 import API from "../api";
 import { FormEvent, useEffect, useState } from "react";
 import { useDebouncedCallback } from "use-debounce";
+import { toast, Toaster } from "react-hot-toast";
 
 type DeveloperResponse = {
   id: number;
@@ -94,8 +95,9 @@ export function Home() {
       .catch(({ response }) => {
         setLoading(false);
         setTotalPages(1);
-        if (response?.status === 404) {
-          setDevelopers([]);
+        setDevelopers([]);
+        if (response?.status !== 404) {
+          toast.error("Algo deu errado!", { duration: 2000 });
         }
       });
   }, [page, currentSearch, changed]);
@@ -110,12 +112,17 @@ export function Home() {
     setCurrentSearch(searchTerm);
   }
 
-  function dataChanged() {
-    setChanged(!changed);
+  function dataChanged(isError: boolean) {
+    if (isError) {
+      toast.error("Algo deu errado!", { duration: 2000 });
+    } else {
+      setChanged(!changed);
+    }
   }
 
   return (
     <Container maxW={"container.xl"} height="100vh">
+      <Toaster position="bottom-right" />
       <Flex
         margin="0 1.5em 1.5em 1.5em"
         alignItems="center"

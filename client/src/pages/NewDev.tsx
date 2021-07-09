@@ -452,7 +452,7 @@ export function NewDev() {
           )}
         </Flex>
       </Flex>
-      <Toaster />
+      <Toaster position="bottom-right" />
     </Flex>
   );
 }

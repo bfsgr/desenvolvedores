@@ -32,7 +32,7 @@ type DevCardProps = FlexProps & {
   data_nascimento: Date;
   sexo: string;
   idade: number;
-  changedCallback: () => void;
+  changedCallback: (isError: boolean) => void;
 };
 
 export function DevCard({
@@ -51,9 +51,15 @@ export function DevCard({
 
   const history = useHistory();
 
-  async function removerDesenvolvedor() {
-    await API.delete(`/developers/${api_id}`);
-    changedCallback();
+  function removerDesenvolvedor() {
+    API.delete(`/developers/${api_id}`)
+      .then(() => {
+        changedCallback(false);
+      })
+      .catch(() => {
+        changedCallback(true);
+      });
+    return true;
   }
 
   function handleEditar() {

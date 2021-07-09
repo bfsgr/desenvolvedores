@@ -14,7 +14,7 @@ export function NotFound() {
       mx="32px"
     >
       <Img src={notFound} alt="Não encontrado" />
-      <Heading>Ops! Parece que o quê você procurou não existe</Heading>
+      <Heading>Ops! Não encontramos o que você queria :(</Heading>
       <Button onClick={() => history.push("/")}>Voltar</Button>
     </Flex>
   );
