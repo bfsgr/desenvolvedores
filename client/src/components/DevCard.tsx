@@ -129,7 +129,7 @@ export function DevCard({
         onClose={onClose}
       >
         <AlertDialogOverlay>
-          <AlertDialogContent>
+          <AlertDialogContent mx="1rem">
             <AlertDialogHeader fontSize="lg" fontWeight="bold">
               Remover desenvolvedor
             </AlertDialogHeader>
