@@ -59,10 +59,10 @@ export function Home() {
 
   const [currentSearch, setCurrentSearch] = useState("");
 
-  const debounced = useDebouncedCallback(
-    (value) => setCurrentSearch(value),
-    450
-  );
+  const debounced = useDebouncedCallback((value) => {
+    setPage(1);
+    setCurrentSearch(value);
+  }, 450);
 
   const history = useHistory();
 
@@ -109,6 +109,7 @@ export function Home() {
   async function handleSearch(ev: FormEvent) {
     ev.preventDefault();
     debounced.cancel();
+    setPage(1);
     setCurrentSearch(searchTerm);
   }
 
@@ -221,7 +222,7 @@ export function Home() {
             aria-label={"Ir para a próxima página"}
           />
           <IconButton
-            onClick={() => page !== totalPages && setPage(totalPages)}
+            onClick={() => page != totalPages && setPage(totalPages)}
             icon={<FontAwesomeIcon icon={faAngleDoubleRight} />}
             aria-label={"Ir para a última página"}
           />
