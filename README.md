@@ -1,21 +1,27 @@
 # Desenvolvedores
+![React](https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB)
+![Typescript](https://img.shields.io/badge/TypeScript-007ACC?style=for-the-badge&logo=typescript&logoColor=white)
+
+
 
 ![Desenvolvedores](https://user-images.githubusercontent.com/38868063/125140593-408e4700-e0e9-11eb-9e78-f555eb33c792.png)
 
 Desenvolveores é uma aplicação simples com funcionalidades CRUD em um front-end SPA
 
 # Design
-Todo o layout foi primeiro protopipado usando o [Figma](https://www.figma.com/file/ULZv1VrjtoWdYfU6CMoE8k/Desenvolvedores?node-id=0%3A1)
+Todo o layout foi primeiro prototipado usando o [Figma](https://www.figma.com/file/ULZv1VrjtoWdYfU6CMoE8k/Desenvolvedores?node-id=0%3A1)
 
 # Tecnologias
  - Typescript
+ - React
+ - ChakraUI
  - TypeORM
  - Express
  - Docker
  - PostgreSQL
 
 # Como executar
-A aplicação foi encapsulada em um container Docker, para executa-lá é necessário ter o docker e docker-compose instalados na sua máquina.
+A aplicação foi encapsulada em um container Docker. Para executa-lá é necessário ter o docker e docker-compose instalados na sua máquina.
 
 Subindo a aplicação
 ```bash
