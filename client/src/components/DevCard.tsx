@@ -48,7 +48,7 @@ export function DevCard({
             </Heading>
             <Text ml="4px">• {idade} anos</Text>
           </Flex>
-          {sexo == "M" ? (
+          {sexo === "M" ? (
             <FontAwesomeIcon icon={faMars} color="#0247FE" size="2x" />
           ) : (
             <FontAwesomeIcon icon={faVenus} color="#FE41FB" size="2x" />

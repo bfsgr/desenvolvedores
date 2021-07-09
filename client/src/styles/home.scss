@@ -3,3 +3,22 @@
     border-radius: 8px;
   }
 }
+#mainSearchInput {
+  border: 1px solid;
+  border-color: var(--chakra-colors-gray-50);
+
+  &:hover {
+    border-color: transparent;
+    background-color: #FFF;
+    box-shadow:  0 0 4px 2px rgba(0, 0, 0, 0.25);
+  }
+  &:focus {
+    background-color: #FFF;
+    box-shadow:  0 0 4px 2px rgba(0, 0, 0, 0.25);
+  }
+}
+
+.info-loading {
+  min-height: 310px;
+}
+

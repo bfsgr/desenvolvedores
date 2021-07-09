@@ -7,7 +7,7 @@ export const theme = extendTheme(
       body: "Inter",
     },
     shadows: {
-      outline: "0 0 0 2px #E0E0E0",
+      outline: "0 0 0px 3px #C0C0C0",
     },
 
     colors: {
