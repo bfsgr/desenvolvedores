@@ -48,12 +48,13 @@ type Developer = {
 };
 
 export function Home() {
-  const LIMIT = 25;
+  const LIMIT = 24;
   const [developers, setDevelopers] = useState<Developer[]>();
   const [page, setPage] = useState(1);
   const [searchTerm, setSearchTerm] = useState("");
   const [totalPages, setTotalPages] = useState(1);
   const [loading, setLoading] = useState(false);
+  const [changed, setChanged] = useState(false);
 
   const [currentSearch, setCurrentSearch] = useState("");
 
@@ -97,7 +98,7 @@ export function Home() {
           setDevelopers([]);
         }
       });
-  }, [page, currentSearch]);
+  }, [page, currentSearch, changed]);
 
   async function handleAdicionar() {
     history.push("/desenvolvedor/novo");
@@ -107,6 +108,10 @@ export function Home() {
     ev.preventDefault();
     debounced.cancel();
     setCurrentSearch(searchTerm);
+  }
+
+  function dataChanged() {
+    setChanged(!changed);
   }
 
   return (
@@ -162,17 +167,19 @@ export function Home() {
             return (
               <DevCard
                 key={dev.id}
+                api_id={dev.id}
                 nome={dev.nome}
                 hobby={dev.hobby}
                 data_nascimento={dev.data_nascimento}
                 sexo={dev.sexo}
                 idade={dev.idade}
+                changedCallback={dataChanged}
               />
             );
           })}
         </SimpleGrid>
       )}
-      {!loading && developers?.length == 0 && (
+      {!loading && developers?.length === 0 && (
         <Flex
           className="info-loading"
           alignItems="center"
@@ -207,7 +214,7 @@ export function Home() {
             aria-label={"Ir para a próxima página"}
           />
           <IconButton
-            onClick={() => setPage(totalPages)}
+            onClick={() => page !== totalPages && setPage(totalPages)}
             icon={<FontAwesomeIcon icon={faAngleDoubleRight} />}
             aria-label={"Ir para a última página"}
           />
