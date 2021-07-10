@@ -11,6 +11,8 @@ Desenvolveores é uma aplicação simples com funcionalidades CRUD em um front-e
 # Design
 Todo o layout foi primeiro prototipado usando o [Figma](https://www.figma.com/file/ULZv1VrjtoWdYfU6CMoE8k/Desenvolvedores?node-id=0%3A1)
 
+Ilustrações por [Storyset](https://storyset.com/internet)
+
 # Tecnologias
  - Typescript
  - React
