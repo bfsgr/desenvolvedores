@@ -56,7 +56,7 @@ yarn typeorm  // da acesso ao CLI do TypeORM
 ```
 
 ## Client
-O server conta com os seguintes scripts:
+O client conta com os seguintes scripts:
 ```
 yarn start      // executa o front-end em modo de desenvolvimento, escutando mudanças nos arquivos
 yarn build      // compila a aplicação para JavaScript
